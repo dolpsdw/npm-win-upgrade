@@ -1,5 +1,5 @@
 {
-  "name": "npm-upgrade",
+  "name": "npm-win-upgrade",
   "version": "1.0.0",
   "description": "Npm tool for upgrade Windows npm node installation.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dolpsdw/npm-upgrade.git"
+    "url": "git+https://github.com/dolpsdw/npm-win-upgrade.git"
   },
   "keywords": [
     "npm",
@@ -19,11 +19,11 @@
   "author": "dolpsdw",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dolpsdw/npm-upgrade/issues"
+    "url": "https://github.com/dolpsdw/npm-win-upgrade/issues"
   },
-  "homepage": "https://github.com/dolpsdw/npm-upgrade#readme",
+  "homepage": "https://github.com/dolpsdw/npm-win-upgrade#readme",
   "bin": {
-    "npm-upgrade": "./index.js"
+    "npm-win-upgrade": "./index.js"
   },
   "dependencies": {},
   "devDependencies": {
