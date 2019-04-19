@@ -1,0 +1,33 @@
+{
+  "name": "npm-upgrade",
+  "version": "1.0.0",
+  "description": "Npm tool for upgrade Windows npm node installation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolpsdw/npm-upgrade.git"
+  },
+  "keywords": [
+    "npm",
+    "windows",
+    "update",
+    "upgrade"
+  ],
+  "author": "dolpsdw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dolpsdw/npm-upgrade/issues"
+  },
+  "homepage": "https://github.com/dolpsdw/npm-upgrade#readme",
+  "bin": {
+    "npm-upgrade": "./index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0"
+  }
+}
