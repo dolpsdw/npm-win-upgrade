@@ -23,11 +23,11 @@ const main = async function() {
   }
   const node = path.dirname(process.execPath); // process.argv0 may output 'node' from cmd invoke
   let npmLocalVersion = await exec('npm --version', {cwd: node});
-  if (npmLocalVersion.stderr) {
-    console.log('Error: ', npmLocalVersion.stderr); process.exit(1);
+  let npmLatestVersion = await exec('npm view npm version', {cwd: node});
+  if (npmLatestVersion.stdout === npmLocalVersion.stdout){
+    console.log('You alredy have the Latest Version'); process.exit(1);
   }
-  npmLocalVersion = npmLocalVersion.stdout.split('\n')[0];
-  console.log(`Found local NPM v${npmLocalVersion} in node Folder ${node}`);
+  console.log(`Found local NPM v${npmLocalVersion.stdout.split('\n')[0]} in node Folder ${node}`);
   if (fs.existsSync(path.join(node, 'node_modules', 'npm', 'npmrc'))) {
     console.log('Saving npmrc and updating npm ', node); // The magic happens on ""{node}"" 4 parameters & npm|MORE as wait pipe
     const update = await exec(`${path.join(__dirname, 'cmdAdmin.exe.lnk')} "cd ""${node}"" ${fs.existsSync(path.join(node, 'node_modules', 'npm', 'npmrc')) ? `&& copy "${path.join(node, 'node_modules', 'npm', 'npmrc')}" "${path.join(node, 'npmrc')}"` : ''} && npm update npm|MORE && IF EXIST "${path.join(node, 'npmrc')}" ( move "${path.join(node, 'npmrc')}" "${path.join(node, 'node_modules', 'npm', 'npmrc')}" ) && IF EXIST "${path.join(node, 'package-lock.json')}" ( del "${path.join(node, 'package-lock.json')}" ) && exit"`);
